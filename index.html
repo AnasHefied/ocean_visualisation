@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,40 +26,86 @@
             text-align: center;
         }
 
-        /* Image */
+        /* Section */
+        section {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Titre de section */
+        h2 {
+            font-size: 1.5rem;
+            color: #00509e;
+            margin-bottom: 10px;
+        }
+
+        /* Images */
         img {
             width: 80%;
             height: auto;
-            margin: 20px 0;
+            margin: 10px 0;
             border: 2px solid #00509e;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-    /* Iframe */
-iframe {
-    width: 70vw; /* Réduit légèrement la largeur pour un rendu plus équilibré */
-    height: 60vh; /* Augmente la hauteur pour un contenu plus lisible */
-    border: 2px solid #d1d5db; /* Ajoute une bordure subtile */
-    border-radius: 10px; /* Coins arrondis pour un design moderne */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre douce */
-    margin-bottom: 30px; /* Ajoute un espace sous l'iframe */
-    background-color: #ffffff; /* Fond blanc pour la carte */
-    overflow: hidden; /* Évite les débordements visuels */
-}
+        /* Galerie */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
 
+        .gallery img {
+            width: 30%;
+            max-width: 200px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
-    <h1>Notre carte de visualisation des océans</h1>
-    
-    <!-- Affichage de l'image ocean_visualisation.jpg -->
-    <img src="ocean_visualisation.jpg" alt="Carte des océans">
+    <h1>Galerie de Visualisations des Océans</h1>
 
-    <!-- Intégration de l'iframe pour la carte Wikidata -->
-    <iframe 
-        src="https://query.wikidata.org/embed.html#SELECT%20%3Foc%C3%A9an%20%3Fimage%20%3Fcoordonn%C3%A9es_g%C3%A9ographiques%20%3Fnature_de_l_%C3%A9l%C3%A9ment%20%3Fnature_de_l_%C3%A9l%C3%A9mentLabel%20%3Fpays%20%3FpaysLabel%20%3Fcat%C3%A9gorie_Commons%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cen%22.%20%7D%0A%20%20%3Foc%C3%A9an%20wdt%3AP31%20wd%3AQ23442%2C%20wd%3AQ8072%3B%0A%20%20%20%20wdt%3AP206%20wd%3AQ98.%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP625%20%3Fcoordonn%C3%A9es_g%C3%A9ographiques.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP31%20%3Fnature_de_l_%C3%A9l%C3%A9ment.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP17%20%3Fpays.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP373%20%3Fcat%C3%A9gorie_Commons.%20%7D%0A%7D%0ALIMIT%202500" 
-        referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups">
-    </iframe>
+    <!-- Section 2.1 Modèles graphiques -->
+    <section>
+        <h2>2.1 Modèles graphiques</h2>
+        <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Feni%20Islands%20NASA.jpg" alt="Modèle Graphique 1">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santiagofromsea.jpg" alt="Modèle Graphique 2">
+        </div>
+    </section>
+
+    <!-- Section 2.4 Visualisation de textes -->
+    <section>
+        <h2>2.4 Visualisation de Textes</h2>
+        <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/R%C3%A1bida%20Island.jpg" alt="Visualisation Texte 1">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bam%20Island.png" alt="Visualisation Texte 2">
+        </div>
+    </section>
+
+    <!-- Section 2.5 Visualisation d'Images -->
+    <section>
+        <h2>2.5 Visualisation d'Images</h2>
+        <div class="gallery">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Floreana4.jpg" alt="Visualisation Image 1">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galapagos-satellite-esislandsnames.jpg" alt="Visualisation Image 2">
+        </div>
+    </section>
+
+    <!-- Intégration de l'iframe pour la carte -->
+    <section>
+        <h2>Carte Interactive</h2>
+        <iframe 
+            src="https://query.wikidata.org/embed.html#SELECT%20%3Foc%C3%A9an%20%3Fimage%20%3Fcoordonn%C3%A9es_g%C3%A9ographiques%20%3Fnature_de_l_%C3%A9l%C3%A9ment%20%3Fnature_de_l_%C3%A9l%C3%A9mentLabel%20%3Fpays%20%3FpaysLabel%20%3Fcat%C3%A9gorie_Commons%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cen%22.%20%7D%0A%20%20%3Foc%C3%A9an%20wdt%3AP31%20wd%3AQ23442%2C%20wd%3AQ8072%3B%0A%20%20%20%20wdt%3AP206%20wd%3AQ98.%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP625%20%3Fcoordonn%C3%A9es_g%C3%A9ographiques.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP31%20%3Fnature_de_l_%C3%A9l%C3%A9ment.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP17%20%3Fpays.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP373%20%3Fcat%C3%A9gorie_Commons.%20%7D%0A%7D%0ALIMIT%202500" 
+            referrerpolicy="origin" 
+            sandbox="allow-scripts allow-same-origin allow-popups">
+        </iframe>
+    </section>
 </body>
 </html>
