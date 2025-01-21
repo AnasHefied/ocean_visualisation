@@ -4,15 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualisation des Océans</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Titre principal */
+        h1 {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #00509e;
+            text-align: center;
+        }
+
+        /* Image */
+        img {
+            width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #00509e;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Iframe */
+        iframe {
+            width: 80vw;
+            height: 50vh;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Notre carte de visualisation des océans</h1>
     
     <!-- Affichage de l'image ocean_visualisation.jpg -->
-    <img src="ocean_visualisation.jpg" alt="Carte des océans" style="width: 80%; height: auto; margin-bottom: 20px;">
+    <img src="ocean_visualisation.jpg" alt="Carte des océans">
 
     <!-- Intégration de l'iframe pour la carte Wikidata -->
-    <iframe style="width: 80vw; height: 50vh; border: none;" 
+    <iframe 
         src="https://query.wikidata.org/embed.html#SELECT%20%3Foc%C3%A9an%20%3Fimage%20%3Fcoordonn%C3%A9es_g%C3%A9ographiques%20%3Fnature_de_l_%C3%A9l%C3%A9ment%20%3Fnature_de_l_%C3%A9l%C3%A9mentLabel%20%3Fpays%20%3FpaysLabel%20%3Fcat%C3%A9gorie_Commons%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cmul%2Cen%22.%20%7D%0A%20%20%3Foc%C3%A9an%20wdt%3AP31%20wd%3AQ23442%2C%20wd%3AQ8072%3B%0A%20%20%20%20wdt%3AP206%20wd%3AQ98.%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP625%20%3Fcoordonn%C3%A9es_g%C3%A9ographiques.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP31%20%3Fnature_de_l_%C3%A9l%C3%A9ment.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP17%20%3Fpays.%20%7D%0A%20%20OPTIONAL%20%7B%20%3Foc%C3%A9an%20wdt%3AP373%20%3Fcat%C3%A9gorie_Commons.%20%7D%0A%7D%0ALIMIT%202500" 
         referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups">
     </iframe>
